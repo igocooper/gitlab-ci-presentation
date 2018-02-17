@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
+	<title>GitLab CI Intro</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
+<style>
+	p.team {
+		text-align: center;
+	}
+
+	.human {
+		font-size: 90px;
+	}
+
+	p.scheme {
+		color: rgb(138,109,59);
+		text-align: center;
+	}
+
+	p.explaining {
+		line-height: 1.5;
+	}
+
+	ul.gitlab-life-cycle li {
+		font-size: 1.3rem;
+	}
+
+	ul.gitlab-life-cycle > li::before {
+		content: "";
+	}
+
+	ul.references > li {
+		color: #585a5e;
+		font-weight: 700;
+	}
+
+	ul.references > li::before {
+		content: '';
+	}
+
+	a.ci-link {
+		color: inherit;
+	}
+
+	span.ci-highlighted {
+		color: #c7254e;
+		background-color: #f9f2f4;
+		border-radius: 6px;
+		padding: 0 6px;
+	}
+
+
+</style>
 <body class="shower list">
 
 	<header class="caption">
@@ -15,13 +65,10 @@
 	</header>
 
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+		<h2>GitLab CI Intro</h2>
+		<p>Brought to you by <a href="http://pepelsbey.net">iGoCooper</a></p>
 		<figure>
 			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
 		</figure>
 		<style>
 			#cover h2 {
@@ -44,152 +91,138 @@
 	</section>
 
 	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
+		<h2>Life Cycle:</h2>
+		<ul class="gitlab-life-cycle">
+			<li><i class="fa fa-info-circle" style="color: rgb(107,79,187);"></i> Have an idea</li>
+			<li><i class="fa fa-exclamation-circle" style="color: rgb(252,109,38);"></i> Create an issue to discuss it with your team</li>
+			<li><i class="fa fa-code" style="color: rgb(252,109,38);"></i> Ship the code within a merge request</li>
+			<li><i class="fa fa-terminal" style="color: rgb(107,79,187);"></i> Run automated scripts (sequential or parallel)
+				<ul class="gitlab-life-cycle_inner">
+					<li>Build, test <b>and deploy</b> to a <b>staging environment</b></li>
+					<li>Preview the changes</li>
 				</ul>
 			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
 
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</section>
-
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+			<li><i class="fa fa-edit" style="color: rgb(107,79,187);"></i> Review the code and get it approved</li>
+			<li><i class="fa fa-code-branch" style="color: rgb(252,109,38);"></i> Merge the feature-branch into master</li>
+			<li><i class="fa fa-cloud-upload-alt" style="color: rgb(107,79,187);"></i> <b>Deploy</b> your changes <b>automatically</b> to a <b>production environment</b></li>
+			<li><i class="fa fa-undo" style="color: rgb(107,79,187);"></i> Rollback if something goes wrong</li>
+		</ul>
 	</section>
 
 	<section class="slide" id="picture">
-		<h2>Pictures</h2>
 		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
+			<img class="cover" src="pictures/cicd.png" alt="CI process scheme">
 		</figure>
 		<style>
 			#picture h2 {
 				color:#FFF;
-				}
+			}
 		</style>
 	</section>
 
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>Continues Integration:</h2>
+		<p class="scheme">TEST - BUILD</p>
+		<p class="explaining">Continues Integration is a software development practice in which you build and test software every time a developer pushes code to the application, and it happens several times a day.</p>
+	</section><section class="slide">
+		<h2>Continues Delivery:</h2>
+		<p class="scheme">TEST - BUILD - <i class="fa fa-hand-pointer" style="color: rgb(252,109,38) !important;"></i> - DEPLOY</p>
+		<p class="explaining">Continues Delivery is a software engineering approach in which <b>continuous integration</b>, <b>automated testing</b>, and <b>automated deployment</b> capabilities allow software to be developed and deployed rapidly, reliably and repeatedly with minimal human intervention. Still, the deployment to production is defined strategically and triggered <b style="color: rgb(252,109,38)">manually</b>.</p>
+	</section>
+
+
+	<section class="slide">
+		<h2>Continues Deployment:</h2>
+		<p class="scheme">TEST - BUILD - <i class="fa fa-cogs" style="color: rgb(252,109,38) !important;"></i> - DEPLOY</p>
+		<p class="explaining">Continues Deployment is a software development practice in which every code change goes through the entire pipeline and is <b>put into production <span style="color: rgb(252,109,38)">automatically</span></b>, resulting in many production deployments every day. It does everything that Continuous Delivery does, but the process is fully automated, there's <b>no human intervention at all</b>.</p>
 	</section>
 
 	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
+		<ul>
+			<li>Create a project</li>
+			<li>Add <span class="ci-highlighted">.gitlab-ci.yml</span> file to the repository </li>
+			<li>Configure <span class="ci-highlighted">gitlab-runner</span> :
+				<ul>
+					<li><a href="https://docs.gitlab.com/runner/install/" class="ci-link">Install Runner</a></li>
+					<li><a href="https://docs.gitlab.com/runner/register/index.html" class="ci-link">Register Runner</a></li>
+				</ul>
+			</li>
+			<li>Commit changes</li>
+			<li>Push changes</li>
+			<li>Check CI pipelines tab</li>
+		</ul>
 	</section>
 
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
+	<section class="slide" >
+		<figure>
+			<img class="cover" src="pictures/hello.png" alt="a man holding two pieces of paper, first is with text hello, second one has text World written on it.">
+		</figure>
 		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
+			#picture h2 {
+				color:#FFF;
+			}
 		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Team Members:</h2>
+		<p class="team">
+			<span class="human next">&#128104;</span>
+			<span class="human next">&#128113;</span>
+			<span class="human next">&#128116;</span>
+			<span class="human next">&#128105;</span>
+			<span class="human next">&#129318;</span>
+		</p>
+	</section>
+
+
+	<section class="slide">
+		<h2>Simple Test</h2>
+		<pre>
+			<code class="bash">cat file1.txt file2.txt | grep -q "Hello world"</code>
+			<code class=""></code>
+		</pre>
+	</section>
+
+
+	<section class="slide">
+		<h2><span class="ci-highlighted">.gitlab-ci.yml</span> file example</h2>
+		<pre>
+			<code class="yaml">  test:</code>
+			<code class="">    script: cat file1.txt file2.txt | grep -q "Hello world"</code>
+		</pre>
+	</section>
+	<!---->
+
+
+	<!--// default part //-->
+
+	<section class="slide" >
+		<h2>
+			Questions?
+		</h2>
+
+	</section>
+
+	<section class="slide">
+		<h2>References:</h2>
+		<ul class="references">
+			<li>CI docs :</li>
+			<ul>
+				<li><a href="https://docs.gitlab.com/runner/install/docker.html">Runner Installation</a></li>
+				<li><a href="https://docs.gitlab.com/runner/register/index.html">Runner Registration</a></li>
+			</ul>
+			<li>CI articles:</li>
+			<ul>
+				<li>
+					<a href="https://about.gitlab.com/2016/07/29/the-basics-of-gitlab-ci/">GitLab CI basics</a>
+				</li>
+				<li>
+					<a href="https://habrahabr.ru/company/softmart/blog/309380/">GitLab CI basics (RU)</a>
+				</li>
+			</ul>
+		</ul>
 	</section>
 
 	<footer class="badge">
@@ -199,6 +232,9 @@
 	<div class="progress"></div>
 
 	<script src="node_modules/shower-core/shower.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/yaml.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
 
 </body>
