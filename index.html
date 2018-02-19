@@ -44,6 +44,11 @@
 		content: '';
 	}
 
+	ul.references a {
+		text-decoration: none;
+		background: none;
+	}
+
 	a.ci-link {
 		color: inherit;
 	}
@@ -193,8 +198,10 @@
 			<code class="">    script: cat file1.txt file2.txt | grep -q "Hello world"</code>
 		</pre>
 	</section>
-	<!---->
 
+	<section class="slide">
+		<h2 class="shout shrink">Live Coding</h2>
+	</section>
 
 	<!--// default part //-->
 
@@ -212,6 +219,8 @@
 			<ul>
 				<li><a href="https://docs.gitlab.com/runner/install/docker.html">Runner Installation</a></li>
 				<li><a href="https://docs.gitlab.com/runner/register/index.html">Runner Registration</a></li>
+				<li><a href="https://docs.gitlab.com/ee/ci/yaml/README.html">Configure <span class="ci-highlighted">.gitlab-ci.yml</span></a></li>
+				<li><a href="https://docs.gitlab.com/ce/ci/variables/README.html">Variables</a></li>
 			</ul>
 			<li>CI articles:</li>
 			<ul>
