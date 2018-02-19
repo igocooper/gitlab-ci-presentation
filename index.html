@@ -59,6 +59,33 @@
 		border-radius: 6px;
 		padding: 0 6px;
 	}
+	.slide .cover.full-size {
+		max-height: initial;
+	}
+
+	.slide.slide_with-frame {
+		position: relative;
+	}
+
+	#cover.slide_with-frame h2{
+		margin: 0 0 0;
+	}
+
+	.slide.slide_with-frame::before {
+		content: "";
+		position: absolute;
+		width: 90%;
+		height: 90%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 4px solid #fff;
+	}
+
+	.gitlab-logo {
+		margin: 0 auto;
+		display: block;
+	}
 
 
 </style>
@@ -69,11 +96,16 @@
 		<p>Yours Truly, Famous Inc.</p>
 	</header>
 
-	<section class="slide" id="cover">
-		<h2>GitLab CI Intro</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">iGoCooper</a></p>
+	<section class="slide slide_with-frame" id="cover">
+		<img class="gitlab-logo" src="pictures/gitlab.logo.png" alt="gitlab logo" width="250px" height="250px">
+		<h2>
+			GitLab CI<br/>
+			for</br>
+		    BEGINNERS
+		</h2>
+		<!--<p>Brought to you by <a href="http://pepelsbey.net">iGoCooper</a></p>-->
 		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+			<img class="cover full-size" src="pictures/cover.png" alt="Night Sky with stars">
 		</figure>
 		<style>
 			#cover h2 {
